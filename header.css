@@ -1,0 +1,164 @@
+/* Header section */
+.header {
+    display             : flex;
+    width               : 100vw;
+
+    justify-content     : center;
+}
+/* ASCII art title */
+.header pre {
+    background-image    : linear-gradient(#8888ff, 
+                                          #8888ff,
+                                          #88c5ff,
+                                          #88c9ff,
+                                          #88e8d0,
+                                          #88e8d0,
+                                          /*#ff8fff, */
+                                          var(--pink-bright),
+                                          white, 
+                                          white, 
+                                          white,
+                                          white
+                        );
+    background-repeat   : no-repeat;
+    background-clip     : text;
+    color               : transparent;
+
+    /*cmon man*/
+
+    -webkit-background-clip     : text;
+
+    text-shadow         : 0 0 20px white;
+    white-space         : pre !important;
+    line-break          : none;
+    text-align          : center;
+}
+
+/* jimmie wanted to become static*/ 
+/*
+.jimmie {
+    display             : flex;
+    width               : 100vw;
+
+    justify-content     : right;
+}
+.jimmie pre{
+    background-image    : linear-gradient(#8888ff, 
+                                          #8888ff,
+                                          #88c5ff,
+                                          #88c9ff,
+                                          #88e8d0,
+                                          #88e8d0,
+                                
+                                          var(--pink-bright),
+                                          white, 
+                                          white, 
+                                          white,
+                                          white
+                        );
+    background-repeat   : no-repeat;
+    background-clip     : text;
+    color               : transparent;
+
+   
+
+    -webkit-background-clip     : text;
+
+    text-shadow         : 0 0 20px white;
+    white-space         : pre !important;
+    line-break          : none;
+    text-align          : left;
+}
+*/
+/* Navigation bar */
+.navigation {
+    display         : flex;
+    position        : relative;
+    height          : 20pt;
+    padding         : 0px;
+    margin-left     : 20px;
+    margin-right    : 20px;
+
+    overflow        : visible;
+
+    background      : transparent;
+
+    align-content   : middle;
+    justify-content : center;
+    flex-wrap       : nowrap;
+}
+
+/* Links in navbar */
+.navigation a {
+    position        : relative;
+    display         : inline-block;
+    width           : 75pt;
+    height          : 16pt;
+    padding-top     : 2pt;
+    margin          : 0px;
+    margin-left     : 10pt;
+    margin-right    : 10pt;
+
+    overflow        : visible;
+
+    color           : var(--nav-fg);
+    border          : var(--nav-border);
+
+    text-decoration : none;
+
+    transition      : all .2s;
+}
+.navigation a:hover {
+    color        : var(--nav-fg-hover);
+    background   : var(--nav-bg-hover);
+    box-shadow   : 0 0 15px 1px var(--pink-bright);
+    animation    : flick_a 5s infinite linear,
+                   flick_b 7s infinite reverse linear,
+                   ee_fx_a    5s linear 0s 1 normal forwards;
+}
+
+.navigation a:hover:after {
+    top        : -6pt;
+    left       : -6pt;
+    border     : 2px solid transparent;
+    border-image : linear-gradient(
+        45deg,
+        var(--pink-bright) 10pt,
+        transparent 10pt calc(100% - 10pt),
+        var(--pink-bright) calc(100% - 10pt)
+    ) 1;
+    width      : calc(100% + 10pt);
+    height     : calc(100% + 10pt);
+    position   : absolute;
+    content    : "";
+}
+
+@keyframes flick_a {
+    31.25% {
+        transform  : skew(0deg);
+        background : var(--nav-bg-hover);
+    }
+    32% {
+        transform  : skew(90deg);
+        background : white;
+    }
+    32.75% {
+        transform  : skew(0deg);
+        background : var(--nav-bg-hover);
+    }
+}
+
+@keyframes flick_b {
+    31.25% {
+        transform  : skew(0deg);
+        background : var(--nav-bg-hover);
+    }
+    32% {
+        transform  : skew(-90deg);
+        background : white;
+    }
+    32.75% {
+        transform  : skew(0deg);
+        background : var(--nav-bg-hover);
+    }
+}
